@@ -168,7 +168,8 @@ input[type=radio] {
 div.radio label {
 	margin: 0 0 6px 20px;
 }
-input[type=submit] {
+/*
+input[type=submit], button {
 	display: inline;
 	font-size: 110%;
 	width: auto;
@@ -186,6 +187,20 @@ form .submit input[type=submit]:hover {
 	background: -webkit-gradient(linear, left top, left bottom, from(#85e573), to(#4ca83d));
 	background-image: -moz-linear-gradient(top, #85e573, #4ca83d);
 }
+form .submit button {
+	background:#62af56;
+	background: -webkit-gradient(linear, left top, left bottom, from(#a8ea9c), to(#62af56));
+	background-image: -moz-linear-gradient(top, #a8ea9c, #62af56);
+	border-color: #2d6324;
+	color: #000;
+	text-shadow: #8cee7c 0px 1px 0px;
+}
+form .submit button:hover {
+	background:#4ca83d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#85e573), to(#4ca83d));
+	background-image: -moz-linear-gradient(top, #85e573, #4ca83d);
+}
+*/
 
 /** Notices and Errors **/
 div.message {

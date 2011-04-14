@@ -102,12 +102,23 @@ class BallotsController extends AppController {
 			$status = 'unknown';
 		}
 
+		$this->Session->delete('vote');
+
 		$this->set(compact('ballot','status','votes'));
 	}
 
 	function vote() {
-		if (!empty($this->data)) {
-			$ballot = $this->Ballot->read(null, $this->data['Ballot']['id']);
+		if (!empty($this->data) || $this->Session->check('vote')) {
+			$voteconfirmed = FALSE;
+			if($this->Session->check('vote')) {
+				if(isset($this->data['Ballot']['voteconfirmed']) && $this->data['Ballot']['voteconfirmed'] == 'yes') {
+					$voteconfirmed = TRUE;
+				}
+				$_POST = $this->Session->read('vote');
+				$ballot = $this->Ballot->read(null, $_POST['data']['Ballot']['id']);
+			} elseif(!empty($this->data)) {
+				$ballot = $this->Ballot->read(null, $this->data['Ballot']['id']);
+			}
 			if(!$ballot) {
 				$this->Session->setFlash(__('Invalid ballot', true));
 				$this->redirect(array('action' => 'index'));
@@ -140,6 +151,8 @@ class BallotsController extends AppController {
 				$this->Session->setFlash(__('You are only allowed ' . $ballot['Ballot']['allowed_votes'] . ' votes.', true));
 				$this->redirect(array('action' => 'view', $ballot['Ballot']['id']));
 			}
+			
+			$votes = array();
 
 			foreach($_POST['vote']['ballotOptionId'] as $vote) {
 				// Check to see if $vote is a valid option for this ballot
@@ -148,24 +161,39 @@ class BallotsController extends AppController {
 					'BallotOption.id' => $vote,
 					'BallotOption.ballot_id' => $ballot['Ballot']['id'],
 				);
-				if(!$this->Ballot->BallotOption->find('all',array('conditions' => $conditions))) {
+				$find_vote = $this->Ballot->BallotOption->find('all',array('conditions' => $conditions));
+				if(!$find_vote) {
 					$this->Session->setFlash(__('You have specified an invalid Ballot Option.', true));
 					$this->redirect(array('action' => 'view', $ballot['Ballot']['id']));
 				}
-				$this->Ballot->BallotOption->Vote->create();
-				$this->Ballot->BallotOption->Vote->set(array(
-					'ballot_option_id' => $vote,
-					'username' => $uid,
-				));
-				if($this->Ballot->BallotOption->Vote->save()) {
-					$this->Session->setFlash(__('Your vote has been cast.', true));
-				} else {
-					$this->Session->setFlash(__('Your vote could not be saved. Please, try again.', true));
-					$this->redirect(array('action' => 'view', $ballot['Ballot']['id']));
+				$votes[] = $find_vote;
+				
+				if($voteconfirmed) {
+					$this->Ballot->BallotOption->Vote->create();
+					$this->Ballot->BallotOption->Vote->set(array(
+						'ballot_option_id' => $vote,
+						'username' => $uid,
+					));
+					if($this->Ballot->BallotOption->Vote->save()) {
+						$this->Session->setFlash(__('Your vote has been cast.', true));
+					} else {
+						$this->Session->setFlash(__('Your vote could not be saved. Please, try again.', true));
+						$this->redirect(array('action' => 'view', $ballot['Ballot']['id']));
+					}
 				}
 			}
+			
+			if($voteconfirmed) {
+				$this->redirect(array('action' => 'index'));
+			}
+			$this->Session->delete('vote');
+			$this->Session->write('vote', $_POST);
+			
+			$this->set(compact('ballot','votes'));
+			
+		} else {
+			$this->redirect(array('action' => 'index'));
 		}
-		$this->redirect(array('action' => 'index'));
 	}
 
 /*

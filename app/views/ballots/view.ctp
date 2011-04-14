@@ -64,7 +64,7 @@
 		$input_type = 'radio';
 	}
 	
-	echo $this->Form->create('Ballot', array('action' => 'vote'));
+	echo $this->Form->create('Ballot', array('action' => 'vote', 'name' => 'BallotVoteForm'));
 	?>
 		<fieldset>
 			<?php
@@ -81,7 +81,8 @@
 			}
 			?>
 		</fieldset>
-	<?php echo $this->Form->end(__('Submit', true));?>
+		<?php echo $this->Html->link(__('Vote', true), 'javascript:document.BallotVoteForm.submit()',array('class'=>'positive primary button')); ?>
+	<?php echo $this->Form->end();?>
 
 <?php endif; ?>
 </div>

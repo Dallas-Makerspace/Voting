@@ -10,6 +10,7 @@
 	echo $this->Html->meta('icon') . "\n";
 	echo $this->Html->css('straightblack') . "\n";
 	echo $this->Html->css('cake.modified') . "\n";
+	echo $this->Html->css('css3buttons') . "\n";
 	echo $scripts_for_layout;
 ?>
 

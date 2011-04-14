@@ -16,7 +16,7 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $this->Html->link($ballot['Ballot']['title'], array('action' => 'view', $ballot['Ballot']['id'])); ?><br />
-		<?php echo $ballot['Ballot']['text']; ?>
+		<?php echo $this->Text->autoLinkUrls($ballot['Ballot']['text']); ?>
 		</td>
 		<td><?php echo $this->Time->nice($ballot['Ballot']['open_date']); ?>&nbsp;</td>
 		<td><?php echo $this->Time->nice($ballot['Ballot']['close_date']); ?>&nbsp;</td>
