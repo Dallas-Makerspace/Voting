@@ -81,7 +81,7 @@
 			}
 			?>
 		</fieldset>
-		<?php echo $this->Html->link(__('Vote', true), 'javascript:document.BallotVoteForm.submit()',array('class'=>'positive primary button')); ?>
+		<?php echo $this->Form->button(__('Vote', true), array('class'=>'positive primary button','type'=>'submit')); ?>
 	<?php echo $this->Form->end();?>
 
 <?php endif; ?>

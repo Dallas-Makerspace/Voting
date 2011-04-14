@@ -1,5 +1,5 @@
 <?php 
-/* App schema generated on: 2011-04-14 10:42:22 : 1302795742*/
+/* App schema generated on: 2011-04-14 13:05:08 : 1302804308*/
 class AppSchema extends CakeSchema {
 	var $name = 'App';
 
@@ -14,7 +14,7 @@ class AppSchema extends CakeSchema {
 		'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'primary'),
 		'ballot_id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'key' => 'index'),
 		'text' => array('type' => 'text', 'null' => false, 'default' => NULL, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
-		'vote_count' => array('type' => 'integer', 'null' => false, 'default' => NULL),
+		'vote_count' => array('type' => 'integer', 'null' => false, 'default' => '0'),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1), 'ballot_id' => array('column' => 'ballot_id', 'unique' => 0)),
 		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'MyISAM')
 	);
@@ -28,6 +28,13 @@ class AppSchema extends CakeSchema {
 		'public' => array('type' => 'boolean', 'null' => false, 'default' => '1'),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1), 'open_date' => array('column' => array('open_date', 'close_date'), 'unique' => 0)),
+		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'MyISAM')
+	);
+	var $cake_sessions = array(
+		'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'key' => 'primary', 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+		'data' => array('type' => 'text', 'null' => true, 'default' => NULL, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+		'expires' => array('type' => 'integer', 'null' => true, 'default' => NULL),
+		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1)),
 		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'MyISAM')
 	);
 	var $votes = array(

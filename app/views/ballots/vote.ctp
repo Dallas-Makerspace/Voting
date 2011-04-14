@@ -37,7 +37,7 @@ You have selected only <?php echo count($votes); ?> out of the allowed <?php ech
 	//echo $this->Form->button('Cancel Vote', array('type'=>'button','class'=>'negative button'));
 	echo $this->Html->link(__('Cancel Vote', true), array('action'=>'view',$ballot['Ballot']['id']),array('class'=>'negative button'));
 	echo ' or ';
-	echo $this->Html->link(__('Confirm Vote', true), 'javascript:document.BallotVoteForm.submit()',array('class'=>'positive primary button'));
+	echo $this->Form->button(__('Confirm Vote', true), array('class'=>'positive primary button','type'=>'submit'));
 	echo $this->Form->end();
 ?>
 

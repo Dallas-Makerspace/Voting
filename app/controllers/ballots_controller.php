@@ -147,8 +147,13 @@ class BallotsController extends AppController {
 				$this->redirect(array('action' => 'index'));
 			}
 
+			if(!isset($_POST['vote'])) {
+				$this->Session->setFlash(__('You have to pick at least one option to vote.', true));
+				$this->redirect(array('action' => 'view', $ballot['Ballot']['id']));
+			}
+
 			if(count($_POST['vote']['ballotOptionId']) > $ballot['Ballot']['allowed_votes'] && $ballot['Ballot']['allowed_votes'] != 0) {
-				$this->Session->setFlash(__('You are only allowed ' . $ballot['Ballot']['allowed_votes'] . ' votes.', true));
+				$this->Session->setFlash('You are only allowed ' . $ballot['Ballot']['allowed_votes'] . ' votes.');
 				$this->redirect(array('action' => 'view', $ballot['Ballot']['id']));
 			}
 			
