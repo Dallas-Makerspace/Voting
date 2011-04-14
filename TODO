@@ -1,0 +1,7 @@
+* Admin interface for creating/editing ballots. Note, editing should only be allowed for Future ballots.
+* Pretty graphs for closed ballots.
+* Mobile interface so users can vote with their smartphones.
+* Ajax pagination? Sure why not.
+* Limit access to particular LDAP/posix group(s).
+* MySQL user database, for groups that don't use LDAP or Active Directory.
+* Recount option, because someone is bound to ask for it.
