@@ -68,15 +68,15 @@
 	?>
 		<fieldset>
 			<?php
-			echo $this->Form->input('id', array('value' => $ballot['Ballot']['id']));
+			echo $this->Form->input('id', array('value' => $ballot['Ballot']['id'])) . "\n";
 			$i = 0;
 			foreach ($ballot['BallotOption'] as $ballotOption) {
 				if($ballot['Ballot']['allowed_votes'] != 1) {
-					echo "<input name=\"vote[ballotOptionId][]\" type=\"checkbox\" value=\"{$ballotOption['id']}\" id=\"{$ballotOption['id']}\" />";
-					echo "<label for=\"{$ballotOption['id']}\">{$ballotOption['text']}</label>\n";
+					echo "<div class=\"checkbox\"><input type=\"checkbox\" name=\"vote[ballotOptionId][]\" value=\"{$ballotOption['id']}\" id=\"{$ballotOption['id']}\" />\n";
+					echo "<label for=\"{$ballotOption['id']}\">{$ballotOption['text']}</label></div>\n";
 				} else {
-					echo "<input name=\"vote[ballotOptionId][]\" type=\"radio\" value=\"{$ballotOption['id']}\" id=\"{$ballotOption['id']}\" />";
-					echo "<label for=\"{$ballotOption['id']}\">{$ballotOption['text']}</label>\n";
+					echo "<div class=\"radio\"><input name=\"vote[ballotOptionId][]\" type=\"radio\" value=\"{$ballotOption['id']}\" id=\"{$ballotOption['id']}\" />";
+					echo "<label for=\"{$ballotOption['id']}\">{$ballotOption['text']}</label></div>\n";
 				}
 			}
 			?>

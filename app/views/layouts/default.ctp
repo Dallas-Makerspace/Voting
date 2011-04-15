@@ -52,7 +52,7 @@
 </div>
 
 <div id="footer">
-<p><a href="https://github.com/aceat64/Dallas-Makerspace-Voting">Source code on GitHub</a> | Content is available under <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="external ">Attribution-Share Alike 3.0 Unported</a> | <a href=""> | Template by <a href="http://www.templatestable.com">Free Css Templates</a></p>
+<p><a href="https://github.com/aceat64/Dallas-Makerspace-Voting">Source code on GitHub</a> | Content is available under <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="external ">Attribution-Share Alike 3.0 Unported</a> | Template by <a href="http://www.templatestable.com">Free Css Templates</a></p>
 </div>
 
 </div>
