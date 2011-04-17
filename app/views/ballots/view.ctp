@@ -22,6 +22,13 @@
 			<?php echo $this->Time->nice($ballot['Ballot']['close_date']); ?>
 			&nbsp;
 		</dd>
+		<?php if($status == 'closed'): ?>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Votes'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo count($votes); ?>
+			&nbsp;
+		</dd>
+		<?php endif; ?>
 	</dl>
 </div>
 <div class="related">
@@ -30,7 +37,7 @@
 <p>You have already cast your vote. Results will be shown once the polls have closed.</p>
 <?php endif; ?>
 <?php if ($status == 'closed' || $status == 'future' || empty($uid) || count($votes) != 0): ?>
-	<?php if (!empty($ballot['BallotOption'])):?>
+	<?php if (!empty($ballot_options)):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Option'); ?></th>
@@ -40,22 +47,22 @@
 	</tr>
 	<?php
 		$i = 0;
-		foreach ($ballot['BallotOption'] as $ballotOption):
+		foreach ($ballot_options as $ballotOption):
 			$class = null;
 			if ($i++ % 2 == 0) {
 				$class = ' class="altrow"';
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $ballotOption['text'];?></td>
+			<td><?php echo $ballotOption['BallotOption']['text'];?></td>
 			<?php if ($status == 'closed'): ?>
-			<td><?php echo $ballotOption['vote_count'] ?></td>
+			<td><?php echo $ballotOption['BallotOption']['vote_count'] ?></td>
 			<?php endif; ?>
 		</tr>
 	<?php endforeach; ?>
 	</table>
 	<?php endif; ?>
-<?php elseif($status == 'open' && !empty($ballot['BallotOption']) && count($votes) == 0): ?>
+<?php elseif($status == 'open' && !empty($ballot_options) && count($votes) == 0): ?>
 
 	<?php
 	if($ballot['Ballot']['allowed_votes'] != 1) {
@@ -70,13 +77,13 @@
 			<?php
 			echo $this->Form->input('id', array('value' => $ballot['Ballot']['id'])) . "\n";
 			$i = 0;
-			foreach ($ballot['BallotOption'] as $ballotOption) {
+			foreach ($ballot_options as $ballotOption) {
 				if($ballot['Ballot']['allowed_votes'] != 1) {
-					echo "<div class=\"checkbox\"><input type=\"checkbox\" name=\"vote[ballotOptionId][]\" value=\"{$ballotOption['id']}\" id=\"{$ballotOption['id']}\" />\n";
-					echo "<label for=\"{$ballotOption['id']}\">{$ballotOption['text']}</label></div>\n";
+					echo "<div class=\"checkbox\"><input type=\"checkbox\" name=\"vote[ballotOptionId][]\" value=\"{$ballotOption['BallotOption']['id']}\" id=\"{$ballotOption['BallotOption']['id']}\" />\n";
+					echo "<label for=\"{$ballotOption['BallotOption']['id']}\">{$ballotOption['BallotOption']['text']}</label></div>\n";
 				} else {
-					echo "<div class=\"radio\"><input name=\"vote[ballotOptionId][]\" type=\"radio\" value=\"{$ballotOption['id']}\" id=\"{$ballotOption['id']}\" />";
-					echo "<label for=\"{$ballotOption['id']}\">{$ballotOption['text']}</label></div>\n";
+					echo "<div class=\"radio\"><input name=\"vote[ballotOptionId][]\" type=\"radio\" value=\"{$ballotOption['BallotOption']['id']}\" id=\"{$ballotOption['BallotOption']['id']}\" />";
+					echo "<label for=\"{$ballotOption['BallotOption']['id']}\">{$ballotOption['BallotOption']['text']}</label></div>\n";
 				}
 			}
 			?>

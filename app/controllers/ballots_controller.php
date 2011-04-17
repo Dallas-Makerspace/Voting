@@ -67,7 +67,14 @@ class BallotsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 
+		$this->Ballot->recursive = 0;
 		$ballot = $this->Ballot->read(null, $id);
+		$params = array(
+			'conditions' => array('BallotOption.ballot_id' => $ballot['Ballot']['id']),
+			'order' => array('BallotOption.vote_count DESC'),
+			'recursive' => -1,
+		);
+		$ballot_options = $this->Ballot->BallotOption->find('all',$params);
 
 		if(!$ballot) {
 			$this->Session->setFlash(__('Invalid ballot', true));
@@ -82,6 +89,11 @@ class BallotsController extends AppController {
 			$status = 'future';
 		} elseif(strtotime($ballot['Ballot']['close_date']) < time()) {
 			$status = 'closed';
+			$ballot_option_ids = array();
+			foreach($ballot_options as $ballot_option) {
+				$ballot_option_ids[] = $ballot_option['BallotOption']['id'];
+			}
+			$votes = $this->Ballot->BallotOption->Vote->find('all',array('group' => array('Vote.username'),'conditions' => array('Vote.ballot_option_id' => $ballot_option_ids)));
 		} elseif(strtotime($ballot['Ballot']['close_date']) > time() && strtotime($ballot['Ballot']['open_date']) < time()) {
 			$status = 'open';
 
@@ -89,8 +101,8 @@ class BallotsController extends AppController {
 
 			if($uid) {
 				$ballot_option_ids = array();
-				foreach($ballot['BallotOption'] as $ballot_option) {
-					$ballot_option_ids[] = $ballot_option['id'];
+				foreach($ballot_options as $ballot_option) {
+					$ballot_option_ids[] = $ballot_option['BallotOption']['id'];
 				}
 				$conditions = array(
 					'Vote.ballot_option_id' => $ballot_option_ids,
@@ -104,7 +116,7 @@ class BallotsController extends AppController {
 
 		$this->Session->delete('vote');
 
-		$this->set(compact('ballot','status','votes'));
+		$this->set(compact('ballot','ballot_options','status','votes'));
 	}
 
 	function vote() {
