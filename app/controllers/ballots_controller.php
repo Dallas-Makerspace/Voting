@@ -99,6 +99,7 @@ class BallotsController extends AppController {
 				SELECT * FROM `ballot_options`
 				WHERE
 				 `vote_count` >= (SELECT `vote_count` FROM `ballot_options` WHERE `ballot_id` = {$ballot['Ballot']['id']} ORDER BY `ballot_options`.`vote_count`  DESC LIMIT ".($ballot['Ballot']['allowed_votes']-1)." , 1)
+				AND `ballot_id` = {$ballot['Ballot']['id']}
 				ORDER BY
 				 `vote_count` DESC
 			";
