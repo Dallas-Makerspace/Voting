@@ -48,12 +48,16 @@
 	<?php
 		$i = 0;
 		foreach ($ballot_options as $ballotOption):
+			$style = null;
 			$class = null;
+			if ($status == 'closed' && isset($winning_ballot_options[$i])) {
+				$style = ' style="font-weight: bold"';
+			}
 			if ($i++ % 2 == 0) {
 				$class = ' class="altrow"';
 			}
 		?>
-		<tr<?php echo $class;?>>
+		<tr<?php echo $class . $style;?>>
 			<td><?php echo $ballotOption['BallotOption']['text'];?></td>
 			<?php if ($status == 'closed'): ?>
 			<td><?php echo $ballotOption['BallotOption']['vote_count'] ?></td>

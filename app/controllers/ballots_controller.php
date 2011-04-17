@@ -94,6 +94,16 @@ class BallotsController extends AppController {
 				$ballot_option_ids[] = $ballot_option['BallotOption']['id'];
 			}
 			$votes = $this->Ballot->BallotOption->Vote->find('all',array('group' => array('Vote.username'),'conditions' => array('Vote.ballot_option_id' => $ballot_option_ids)));
+
+			$winning_ballot_options_query = "
+				SELECT * FROM `ballot_options`
+				WHERE
+				 `vote_count` >= (SELECT `vote_count` FROM `ballot_options` WHERE `ballot_id` = {$ballot['Ballot']['id']} ORDER BY `ballot_options`.`vote_count`  DESC LIMIT ".($ballot['Ballot']['allowed_votes']-1)." , 1)
+				ORDER BY
+				 `vote_count` DESC
+			";
+			$winning_ballot_options = $this->Ballot->BallotOption->query($winning_ballot_options_query);
+
 		} elseif(strtotime($ballot['Ballot']['close_date']) > time() && strtotime($ballot['Ballot']['open_date']) < time()) {
 			$status = 'open';
 
@@ -116,7 +126,7 @@ class BallotsController extends AppController {
 
 		$this->Session->delete('vote');
 
-		$this->set(compact('ballot','ballot_options','status','votes'));
+		$this->set(compact('ballot','ballot_options','winning_ballot_options','status','votes'));
 	}
 
 	function vote() {
