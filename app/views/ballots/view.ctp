@@ -22,21 +22,22 @@
 			<?php echo $this->Time->nice($ballot['Ballot']['close_date']); ?>
 			&nbsp;
 		</dd>
-		<?php if($status == 'closed'): ?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Votes'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Total Votes Cast'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo count($votes); ?>
+			<?php echo $total_votes; ?>
 			&nbsp;
 		</dd>
-		<?php endif; ?>
 	</dl>
 </div>
 <div class="related">
 	<h3><?php __('Ballot Options');?></h3>
-<?php if (isset($votes) && count($votes) != 0 && $status == 'open'): ?>
-<p>You have already cast your vote. Results will be shown once the polls have closed.</p>
+<?php if (isset($user_votes) && $user_votes != 0 && $status == 'open'): ?>
+<div class="success-message">You have already cast your vote. Results will be shown once the polls have closed.</div>
 <?php endif; ?>
-<?php if ($status == 'closed' || $status == 'future' || empty($uid) || count($votes) != 0): ?>
+<?php if ($status == 'open' && empty($uid)): ?>
+<div class="success-message">Please login to vote.</div>
+<?php endif; ?>
+<?php if ($status == 'closed' || $status == 'future' || empty($uid) || $user_votes != 0): ?>
 	<?php if (!empty($ballot_options)):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
@@ -66,7 +67,7 @@
 	<?php endforeach; ?>
 	</table>
 	<?php endif; ?>
-<?php elseif($status == 'open' && !empty($ballot_options) && count($votes) == 0): ?>
+<?php elseif($status == 'open' && !empty($ballot_options) && $user_votes == 0): ?>
 
 	<?php
 	if($ballot['Ballot']['allowed_votes'] != 1) {

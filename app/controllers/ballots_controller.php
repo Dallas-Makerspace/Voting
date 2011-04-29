@@ -85,15 +85,15 @@ class BallotsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 
+		$ballot_option_ids = array();
+		foreach($ballot_options as $ballot_option) {
+			$ballot_option_ids[] = $ballot_option['BallotOption']['id'];
+		}
+
 		if(strtotime($ballot['Ballot']['open_date']) > time()) {
 			$status = 'future';
 		} elseif(strtotime($ballot['Ballot']['close_date']) < time()) {
 			$status = 'closed';
-			$ballot_option_ids = array();
-			foreach($ballot_options as $ballot_option) {
-				$ballot_option_ids[] = $ballot_option['BallotOption']['id'];
-			}
-			$votes = $this->Ballot->BallotOption->Vote->find('all',array('group' => array('Vote.username'),'conditions' => array('Vote.ballot_option_id' => $ballot_option_ids)));
 
 			$winning_ballot_options_query = "
 				SELECT * FROM `ballot_options`
@@ -104,30 +104,23 @@ class BallotsController extends AppController {
 				 `vote_count` DESC
 			";
 			$winning_ballot_options = $this->Ballot->BallotOption->query($winning_ballot_options_query);
-
 		} elseif(strtotime($ballot['Ballot']['close_date']) > time() && strtotime($ballot['Ballot']['open_date']) < time()) {
 			$status = 'open';
 
 			$uid = $this->LdapAuth->user('uid');
 
 			if($uid) {
-				$ballot_option_ids = array();
-				foreach($ballot_options as $ballot_option) {
-					$ballot_option_ids[] = $ballot_option['BallotOption']['id'];
-				}
-				$conditions = array(
-					'Vote.ballot_option_id' => $ballot_option_ids,
-					'Vote.username' => $uid,
-				);
-				$votes = $this->Ballot->BallotOption->Vote->find('all',array('conditions' => $conditions));
+				$user_votes = count($this->Ballot->BallotOption->Vote->find('all',array('conditions' => array('Vote.ballot_option_id' => $ballot_option_ids,'Vote.username' => $uid))));
 			}
 		} else {
 			$status = 'unknown';
 		}
 
+		$total_votes = count($this->Ballot->BallotOption->Vote->find('all',array('group' => array('Vote.username'),'conditions' => array('Vote.ballot_option_id' => $ballot_option_ids))));
+
 		$this->Session->delete('vote');
 
-		$this->set(compact('ballot','ballot_options','winning_ballot_options','status','votes'));
+		$this->set(compact('ballot','ballot_options','winning_ballot_options','status','user_votes','total_votes'));
 	}
 
 	function vote() {
@@ -203,7 +196,7 @@ class BallotsController extends AppController {
 						'username' => $uid,
 					));
 					if($this->Ballot->BallotOption->Vote->save()) {
-						$this->Session->setFlash(__('Your vote has been cast.', true));
+						$this->Session->setFlash(__('Your vote has been cast.', true),'default',array('class' => 'success-message'));
 					} else {
 						$this->Session->setFlash(__('Your vote could not be saved. Please, try again.', true));
 						$this->redirect(array('action' => 'view', $ballot['Ballot']['id']));

@@ -212,11 +212,14 @@ div.message {
 	background: #c73e14;
 	padding: 5px;
 }
-div.error-message {
+div.success-message {
 	clear: both;
 	color: #fff;
+	font-size: 140%;
 	font-weight: bold;
-	background: #c73e14;
+	margin: 0 0 1em 0;
+	background: #336699;
+	padding: 5px;
 }
 p.error {
 	background-color: #e32;
