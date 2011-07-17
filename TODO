@@ -5,3 +5,4 @@
 * Limit access to particular LDAP/posix group(s).
 * MySQL user database, for groups that don't use LDAP or Active Directory.
 * Recount option, because someone is bound to ask for it.
+* Investigate options for cryptographically secured voting
