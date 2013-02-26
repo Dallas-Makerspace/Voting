@@ -1,0 +1,8 @@
+2012-03-08 16:09:07 Debug: Missing BaseDN in ou=People
+2012-03-08 16:14:41 Notice: Notice (8): session_start() [http://php.net/function.session-start]: ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in [/home/aceat64/htdocs/dev/voting/cake/libs/cake_session.php, line 587]
+2012-03-08 16:15:29 Debug: Missing BaseDN in ou=People
+2012-03-08 16:15:29 Debug: Missing BaseDN in ou=People
+2012-03-08 16:16:29 Debug: Missing BaseDN in ou=People
+2012-11-01 11:49:06 Debug: Missing BaseDN in ou=People
+2012-11-01 11:49:10 Debug: Missing BaseDN in ou=People
+2012-11-01 11:49:22 Debug: Missing BaseDN in ou=People

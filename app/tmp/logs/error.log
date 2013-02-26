@@ -1,0 +1,813 @@
+2013-02-26 01:46:29 Error: [MissingComponentException] Component class LdapAuthComponent could not be found.
+Exception Attributes: array (
+  'class' => 'LdapAuthComponent',
+  'plugin' => false,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('LdapAuth', Array)
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(634): ComponentCollection->init(Object(PagesController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-02-26 01:48:26 Error: [MissingComponentException] Component class LdapAuthComponent could not be found.
+Exception Attributes: array (
+  'class' => 'LdapAuthComponent',
+  'plugin' => false,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('LdapAuth', Array)
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(634): ComponentCollection->init(Object(PagesController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-02-26 01:52:59 Error: [MissingComponentException] Component class LdapAuthComponent could not be found.
+Exception Attributes: array (
+  'class' => 'LdapAuthComponent',
+  'plugin' => false,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('LdapAuth', Array)
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(634): ComponentCollection->init(Object(PagesController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-02-26 01:53:43 Error: [MissingComponentException] Component class LdapAuthComponent could not be found.
+Exception Attributes: array (
+  'class' => 'LdapAuthComponent',
+  'plugin' => false,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('LdapAuth', Array)
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(634): ComponentCollection->init(Object(PagesController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-02-26 01:54:43 Error: [MissingComponentException] Component class LdapAuthComponent could not be found.
+Exception Attributes: array (
+  'class' => 'LdapAuthComponent',
+  'plugin' => false,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/ComponentCollection.php(52): ComponentCollection->load('LdapAuth', Array)
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(634): ComponentCollection->init(Object(PagesController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(182): Controller->constructClasses()
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-02-26 01:56:49 Error: [MissingControllerException] Controller class UsersController could not be found.
+Exception Attributes: array (
+  'class' => 'UsersController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/users/login
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:00:50 Error: [MissingControllerException] Controller class UsersController could not be found.
+Exception Attributes: array (
+  'class' => 'UsersController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/users/login
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:00:51 Error: [MissingControllerException] Controller class UsersController could not be found.
+Exception Attributes: array (
+  'class' => 'UsersController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/users/login
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:09:10 Error: [MissingHelperException] Helper class TreeHelper could not be found.
+Exception Attributes: array (
+  'class' => 'TreeHelper',
+  'plugin' => false,
+)
+Request URL: /dev/voting/users/login
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/View/View.php(884): HelperCollection->load('Tree', Array)
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/View/View.php(463): View->loadHelpers()
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(947): View->render(NULL, NULL)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(193): Controller->render()
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#5 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2013-02-26 02:09:52 Error: Fatal Error (1): Call to a member function flash() on a non-object in [/home/aceat64/htdocs/dev/voting/app/View/Users/login.ctp, line 2]
+2013-02-26 02:09:52 Error: [FatalErrorException] Call to a member function flash() on a non-object
+Request URL: /dev/voting/users/login
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 2)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 2, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 2, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:11:18 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/css/css3buttons.css
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:11:44 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/img/gh-icons.png
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:15:40 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/ballots/index/open
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:15:41 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/ballots/index/future
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:15:42 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/ballots/index/closed
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:15:43 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/ballots
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:15:47 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/ballots
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:16:34 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/ballots
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:16:36 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/ballots
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:16:40 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:02 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:04 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:05 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:06 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/ballots/index/future
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:07 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/ballots/index/closed
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:08 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:09 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:19 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:21 Error: [MissingControllerException] Controller class CategoriesController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoriesController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/categories
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:23 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:24 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:18:25 Error: [MissingControllerException] Controller class BallotsController could not be found.
+Exception Attributes: array (
+  'class' => 'BallotsController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/ballots/index/closed
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:20:02 Error: Fatal Error (1): Call to a member function user() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 20]
+2013-02-26 02:20:02 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /dev/voting/ballots/index/closed
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 20)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 20, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 20, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:21:11 Error: [MissingControllerException] Controller class CategoriesController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoriesController',
+  'plugin' => NULL,
+)
+Request URL: /dev/voting/categories
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-26 02:38:38 Error: [MissingActionException] Action BallotsController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'BallotsController',
+  'action' => 'admin_index',
+)
+Request URL: /dev/voting/admin/ballots
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-02-26 02:39:05 Error: Fatal Error (1): Call to a member function user() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 91]
+2013-02-26 02:39:05 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /dev/voting/ballots/view/7
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 91)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 91, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 91, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:40:32 Error: Fatal Error (1): Call to a member function user() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 91]
+2013-02-26 02:40:32 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 91)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 91, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 91, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:40:54 Error: Fatal Error (1): Call to a member function user() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 91]
+2013-02-26 02:40:54 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 91)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 91, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 91, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:41:04 Error: Fatal Error (1): Call to a member function user() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 118]
+2013-02-26 02:41:04 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 118)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 118, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 118, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:41:12 Error: Fatal Error (1): Call to a member function user() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 119]
+2013-02-26 02:41:12 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 119, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 119, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:41:13 Error: Fatal Error (1): Call to a member function user() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 119]
+2013-02-26 02:41:13 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 119, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 119, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:41:24 Error: Fatal Error (1): Call to a member function user() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 119]
+2013-02-26 02:41:24 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 119, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 119, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:41:25 Error: Fatal Error (1): Call to a member function user() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 119]
+2013-02-26 02:41:25 Error: [FatalErrorException] Call to a member function user() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 119)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 119, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 119, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:41:44 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 128]
+2013-02-26 02:41:44 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 128)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 128, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 128, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:43:24 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 122]
+2013-02-26 02:43:24 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 122)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:45:52 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 122]
+2013-02-26 02:45:52 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 122)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:45:56 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 122]
+2013-02-26 02:45:56 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 122)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:46:14 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 122]
+2013-02-26 02:46:14 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 122)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:46:35 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 122]
+2013-02-26 02:46:35 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 122)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:47:18 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 122]
+2013-02-26 02:47:18 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 122)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 122, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 02:48:49 Error: Fatal Error (1): Call to a member function find() on a non-object in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 126]
+2013-02-26 02:48:49 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /dev/voting/ballots/view/9
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/home/aceat64/h...', 126)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/home/aceat64/h...', 126, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/home/aceat64/h...', 126, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 03:16:01 Error: [MissingActionException] Action BallotsController::admin_Add Option() could not be found.
+Exception Attributes: array (
+  'controller' => 'BallotsController',
+  'action' => 'admin_Add Option',
+)
+Request URL: /dev/voting/admin/ballots/Add%20Option
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-02-26 03:27:50 Error: Fatal Error (4): syntax error, unexpected '/' in [/home/aceat64/htdocs/dev/voting/app/View/Ballots/admin_add.ctp, line 20]
+2013-02-26 03:27:50 Error: [FatalErrorException] syntax error, unexpected '/'
+Request URL: /dev/voting/admin/ballots/add
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/aceat64/h...', 20)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/aceat64/h...', 20, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/aceat64/h...', 20, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 03:33:09 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/admin/ballots/add
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:33:34 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/admin/ballots/add
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:35:28 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:35:33 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:36:26 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:36:30 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:37:34 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:38:41 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:38:45 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:39:22 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:43:29 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:45:56 Error: [BadRequestException] The request has been black-holed
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Component/SecurityComponent.php(234): SecurityComponent->blackHole(Object(BallotsController), 'auth')
+#1 [internal function]: SecurityComponent->startup(Object(BallotsController))
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Utility/ObjectCollection.php(131): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home/aceat64/htdocs/dev/voting/lib/Cake/Event/CakeEventManager.php(247): call_user_func(Array, Object(CakeEvent))
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(183): Controller->startupProcess()
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 03:54:03 Error: Fatal Error (1): Cannot use string offset as an array in [/home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php, line 101]
+2013-02-26 03:54:03 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /dev/voting/ballots/view/14
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Cannot use stri...', '/home/aceat64/h...', 101)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', '/home/aceat64/h...', 101, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', '/home/aceat64/h...', 101, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 04:07:51 Error: Fatal Error (4): syntax error, unexpected T_ECHO in [/home/aceat64/htdocs/dev/voting/app/View/Ballots/vote.ctp, line 38]
+2013-02-26 04:07:51 Error: [FatalErrorException] syntax error, unexpected T_ECHO
+Request URL: /dev/voting/ballots/vote
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/aceat64/h...', 38)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/aceat64/h...', 38, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/aceat64/h...', 38, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 04:10:33 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'ballot_option_id' cannot be null
+Request URL: /dev/voting/ballots/vote/14
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('INSERT INTO `dm...', Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Datasource/DboSource.php(1007): DboSource->execute('INSERT INTO `dm...')
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Model.php(1734): DboSource->create(Object(Vote), Array, Array)
+#4 /home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php(207): Model->save()
+#5 [internal function]: BallotsController->vote('14')
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(BallotsController), Array)
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#9 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-02-26 04:11:02 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'ballot_option_id' cannot be null
+Request URL: /dev/voting/ballots/vote/14
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('INSERT INTO `dm...', Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Datasource/DboSource.php(1007): DboSource->execute('INSERT INTO `dm...')
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Model.php(1734): DboSource->create(Object(Vote), Array, Array)
+#4 /home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php(207): Model->save()
+#5 [internal function]: BallotsController->vote('14')
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(BallotsController), Array)
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#9 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-02-26 04:11:23 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'ballot_option_id' cannot be null
+Request URL: /dev/voting/ballots/vote/14
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Datasource/DboSource.php(459): PDOStatement->execute(Array)
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Datasource/DboSource.php(425): DboSource->_execute('INSERT INTO `dm...', Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Datasource/DboSource.php(1007): DboSource->execute('INSERT INTO `dm...')
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Model.php(1734): DboSource->create(Object(Vote), Array, Array)
+#4 /home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php(207): Model->save()
+#5 [internal function]: BallotsController->vote('14')
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(BallotsController), Array)
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#8 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#9 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-02-26 04:11:59 Error: Fatal Error (1): Cannot use string offset as an array in [/home/aceat64/htdocs/dev/voting/app/View/Ballots/view.ctp, line 62]
+2013-02-26 04:11:59 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /dev/voting/ballots/view/14
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Cannot use stri...', '/home/aceat64/h...', 62)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', '/home/aceat64/h...', 62, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', '/home/aceat64/h...', 62, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 04:13:43 Error: Fatal Error (1): Cannot use string offset as an array in [/home/aceat64/htdocs/dev/voting/app/View/Ballots/view.ctp, line 63]
+2013-02-26 04:13:43 Error: [FatalErrorException] Cannot use string offset as an array
+Request URL: /dev/voting/ballots/view/14
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Cannot use stri...', '/home/aceat64/h...', 63)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use stri...', '/home/aceat64/h...', 63, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot use stri...', '/home/aceat64/h...', 63, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-26 04:18:24 Error: [MissingTableException] Table counter_caches for model counterCache was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'counter_caches',
+  'class' => 'counterCache',
+  'ds' => 'default',
+)
+Request URL: /dev/voting/ballots/view/14
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Model.php(3217): Model->setSource('counter_caches')
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Model/Model.php(2674): DboSource->read(Object(Vote), Array)
+#3 /home/aceat64/htdocs/dev/voting/app/Controller/BallotsController.php(123): Model->find('all', Array)
+#4 [internal function]: BallotsController->view('14')
+#5 /home/aceat64/htdocs/dev/voting/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(BallotsController), Array)
+#6 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#7 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#8 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-02-26 04:22:53 Error: [MissingActionException] Action BallotsController::ad() could not be found.
+Exception Attributes: array (
+  'controller' => 'BallotsController',
+  'action' => 'ad',
+)
+Request URL: /dev/voting/ballots/ad
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-02-26 04:22:54 Error: [MissingActionException] Action BallotsController::admin() could not be found.
+Exception Attributes: array (
+  'controller' => 'BallotsController',
+  'action' => 'admin',
+)
+Request URL: /dev/voting/ballots/admin
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 /home/aceat64/htdocs/dev/voting/lib/Cake/Routing/Dispatcher.php(161): Dispatcher->_invoke(Object(BallotsController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/aceat64/htdocs/dev/voting/app/webroot/index.php(97): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-02-26 04:28:21 Error: Fatal Error (1): Cannot unset string offsets in [/home/aceat64/htdocs/dev/voting/lib/Cake/View/Helper/FormHelper.php, line 1391]
+2013-02-26 04:28:21 Error: [FatalErrorException] Cannot unset string offsets
+Request URL: /dev/voting/ballots/view/1
+Stack Trace:
+#0 /home/aceat64/htdocs/dev/voting/lib/Cake/Error/ErrorHandler.php(183): ErrorHandler::handleFatalError(1, 'Cannot unset st...', '/home/aceat64/h...', 1391)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot unset st...', '/home/aceat64/h...', 1391, Array)
+#2 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(926): call_user_func('ErrorHandler::h...', 1, 'Cannot unset st...', '/home/aceat64/h...', 1391, Array)
+#3 /home/aceat64/htdocs/dev/voting/lib/Cake/Core/App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

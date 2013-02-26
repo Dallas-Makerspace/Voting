@@ -1,3 +1,8 @@
+/** Print **/
+.printonly {
+	display: none;
+}
+
 /** Tables **/
 table {
 	background: #fff;
@@ -34,7 +39,7 @@ table tr td {
 table tr:nth-child(2n) td {
 	background: #f5f5f5;
 }
-table .altrow td {
+table .altrow td, div.altrow {
 	background: #f5f5f5;
 }
 td.actions {
@@ -168,6 +173,11 @@ input[type=radio] {
 div.radio label {
 	margin: 0 0 6px 20px;
 }
+
+div.error {
+	background: #CCC;
+}
+
 /*
 input[type=submit], button {
 	display: inline;

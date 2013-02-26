@@ -1,0 +1,2 @@
+2012-11-01 11:49:06 Ldap.error: Auth failed for 'uid=aceat64,ou=people,dc=dallasmakerspace,dc=org'!
+2012-11-01 11:49:06 Ldap.error: Auth Error: for 'uid=aceat64,ou=people,dc=dallasmakerspace,dc=org': 49: Invalid credentials
