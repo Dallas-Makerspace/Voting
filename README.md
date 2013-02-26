@@ -23,3 +23,5 @@ Installing this application is fairly easy, just follow these steps:
 2. In the app/config directory, rename core.php.default and database.php.default to core.php and database.php.default respectively.
 
 3. Modify the core.php and database.php files to suit your environment.
+
+4. Create the appropriate tables in your database. You can do this with the "Console/cake schema create" command or by importing the schema.sql file located in the app/Config/Schema folder.
