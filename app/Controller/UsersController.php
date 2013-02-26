@@ -35,6 +35,8 @@ class UsersController extends AppController {
 				if (in_array('voting',$user['User']['groups'])) {
 					$this->Auth->login($user);
 					$this->redirect($this->Auth->redirect());
+				} elseif (in_array('members',$user['User']['groups'])) {
+					$this->Session->setFlash(__('Authorization failure. Your account does not have voting rights.'));
 				} else {
 					$this->Session->setFlash(__('Authorization failure. Your account is inactive.'));
 				}
