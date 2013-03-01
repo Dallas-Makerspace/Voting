@@ -14,6 +14,13 @@ class Ballot extends AppModel {
 	public $displayField = 'title';
 
 /**
+ * Order by
+ *
+ * @var string
+ */
+	public $order = "Ballot.open_date desc";
+
+/**
  * Validation rules
  *
  * @var array
