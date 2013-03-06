@@ -31,19 +31,23 @@ class UsersController extends AppController {
 				foreach ($result as $group) {
 					$user['User']['groups'][] = $group['Group']['cn'];
 				}
-				// User must be in the "members" group to login
-				if (in_array('voting',$user['User']['groups'])) {
+				// User must be in the "voting" and "members" groups to login
+				if (in_array('voting',$user['User']['groups']) && in_array('members',$user['User']['groups'])) {
 					$this->Auth->login($user);
 					$this->redirect($this->Auth->redirect());
 				} elseif (in_array('members',$user['User']['groups'])) {
+					// User is a member, but not a voting member
 					$this->Session->setFlash(__('Authorization failure. Your account does not have voting rights.'));
 				} else {
+					// Account exists, but is not in the right groups
 					$this->Session->setFlash(__('Authorization failure. Your account is inactive.'));
 				}
 			} else {
 				$this->Session->setFlash(__('Username or password is incorrect.'));
 			}
 		}
+		// Don't fill the fields back in!
+		unset($this->request->data);
 	}
 
 /**
