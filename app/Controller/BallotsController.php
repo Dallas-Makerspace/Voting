@@ -77,11 +77,24 @@ class BallotsController extends AppController {
 
 		$this->Ballot->recursive = 0;
 		$ballot = $this->Ballot->read(null, $id);
-		$params = array(
-			'conditions' => array('BallotOption.ballot_id' => $ballot['Ballot']['id']),
-			'order' => array('BallotOption.vote_count DESC'),
-			'recursive' => -1,
-		);
+
+		if (strtotime($ballot['Ballot']['close_date']) < time()) {
+			// If the polls are closed, sort by vote_count
+			$params = array(
+				'conditions' => array('BallotOption.ballot_id' => $ballot['Ballot']['id']),
+				'order' => array('BallotOption.vote_count DESC'),
+				'recursive' => -1,
+			);
+		} else {
+			// Otherwise, sort by ID
+			$params = array(
+				'conditions' => array('BallotOption.ballot_id' => $ballot['Ballot']['id']),
+				'order' => array('BallotOption.id ASC'),
+				'recursive' => -1,
+			);
+
+		}
+
 		$ballot_options = $this->Ballot->BallotOption->find('list',$params);
 		$ballot_option_info = $this->Ballot->BallotOption->find('all',$params);
 
