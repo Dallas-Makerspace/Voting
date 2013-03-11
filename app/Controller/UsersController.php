@@ -97,11 +97,21 @@ class UsersController extends AppController {
 				return false;
 			}
 		} elseif ($hash_type == 'sha') {
-			// TODO: Not yet implimented
-			return false;
+			// This has not be tested
+			$test_hash = '{SHA}' . base64_encode(sha1( $pass, TRUE ));
+			if (strcmp($hash,$test_hash) == 0) {
+				return true;
+			} else {
+				return false;
+			}
 		} elseif ($hash_type == 'md5') {
-			// TODO: Not yet implimented
-			return false;
+			// This has not be tested
+			$test_hash = '{MD5}' . base64_encode(md5( $pass,TRUE));
+			if (strcmp($hash,$test_hash) == 0) {
+				return true;
+			} else {
+				return false;
+			}
 		} else {
 			// Plaintext?
 			if ($pass == $hash) {
