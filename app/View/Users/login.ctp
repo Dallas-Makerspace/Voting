@@ -9,7 +9,7 @@
 <?php
 	echo $this->Html->div('button-group',
 		$this->Form->button(__('Login'), array('type'=>'submit','class'=>'button primary icon approve'))
-		. $this->Html->link(__('Cancel'), array('controller' => 'pages', 'action' => 'display', 'home'), array('class' => 'button danger'))
+		. $this->Html->link(__('Cancel'), array('controller' => 'ballots', 'action' => 'index', 'open'), array('class' => 'button danger'))
 	);
 	echo $this->Form->end();
 ?>
