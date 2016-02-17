@@ -24,20 +24,20 @@ class BallotsController extends AppController {
 				case "closed":
 					// Grab only closed ballots
 					$this->paginate = array(
-						'conditions' => array('Ballot.close_date < now()'),
+						'conditions' => array('Ballot.close_date <' => date('Y-m-d H:i:s')),
 					);
 					break;
 				case "future":
 					// Grab only future ballots
 					$this->paginate = array(
-						'conditions' => array('Ballot.open_date > now()'),
+						'conditions' => array('Ballot.open_date >' => date('Y-m-d H:i:s')),
 					);
 					break;
 				case "open":
 				default:
 					// Grab only open ballots (the default)
 					$this->paginate = array(
-						'conditions' => array('Ballot.open_date < now()', 'Ballot.close_date > now()'),
+						'conditions' => array('Ballot.open_date <' => date('Y-m-d H:i:s'), 'Ballot.close_date >' => date('Y-m-d H:i:s')),
 					);
 					break;
 			}
@@ -47,20 +47,20 @@ class BallotsController extends AppController {
 				case "closed":
 					// Grab only closed ballots
 					$this->paginate = array(
-						'conditions' => array('Ballot.close_date < now()', 'Ballot.public' => 1),
+						'conditions' => array('Ballot.close_date <' => date('Y-m-d H:i:s'), 'Ballot.public' => 1),
 					);
 					break;
 				case "future":
 					// Grab only future ballots
 					$this->paginate = array(
-						'conditions' => array('Ballot.open_date > now()', 'Ballot.public' => 1),
+						'conditions' => array('Ballot.open_date >' => date('Y-m-d H:i:s'), 'Ballot.public' => 1),
 					);
 					break;
 				case "open":
 				default:
 					// Grab only open ballots (the default)
 					$this->paginate = array(
-						'conditions' => array('Ballot.open_date < now()', 'Ballot.close_date > now()', 'Ballot.public' => 1),
+						'conditions' => array('Ballot.open_date <' => date('Y-m-d H:i:s'), 'Ballot.close_date >' => date('Y-m-d H:i:s'), 'Ballot.public' => 1),
 					);
 					break;
 			}
