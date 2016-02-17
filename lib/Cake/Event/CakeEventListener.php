@@ -1,19 +1,17 @@
 <?php
 /**
- *
- * PHP 5
- *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright	  Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright	  Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link		  http://cakephp.org CakePHP(tm) Project
  * @package		  Cake.Observer
  * @since		  CakePHP(tm) v 2.1
- * @license		  MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 /**
@@ -30,7 +28,7 @@ interface CakeEventListener {
  *
  * ## Example:
  *
- * {{{
+ * ```
  *	public function implementedEvents() {
  *		return array(
  *			'Order.complete' => 'sendEmail',
@@ -38,7 +36,7 @@ interface CakeEventListener {
  *			'User.onRegister' => array('callable' => 'logRegistration', 'priority' => 20, 'passParams' => true)
  *		);
  *	}
- * }}}
+ * ```
  *
  * @return array associative array or event key names pointing to the function
  * that should be called in the object when the respective event is fired

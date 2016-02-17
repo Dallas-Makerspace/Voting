@@ -3,21 +3,20 @@
  * Dispatcher takes the URL information, parses it for parameters and
  * tells the involved controllers what to do.
  *
- * This is the heart of Cake's operation.
- *
- * PHP 5
+ * This is the heart of CakePHP's operation.
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Routing
  * @since         CakePHP(tm) v 0.2.9
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 App::uses('Router', 'Routing');
@@ -60,7 +59,7 @@ class Dispatcher implements CakeEventListener {
 
 /**
  * Returns the CakeEventManager instance or creates one if none was
- * creted. Attaches the default listeners and filters
+ * created. Attaches the default listeners and filters
  *
  * @return CakeEventManager
  */
@@ -74,7 +73,7 @@ class Dispatcher implements CakeEventListener {
 	}
 
 /**
- * Returns the list of events this object listents to.
+ * Returns the list of events this object listens to.
  *
  * @return array
  */
@@ -86,7 +85,7 @@ class Dispatcher implements CakeEventListener {
  * Attaches all event listeners for this dispatcher instance. Loads the
  * dispatcher filters from the configured locations.
  *
- * @param CakeEventManager $manager
+ * @param CakeEventManager $manager Event manager instance.
  * @return void
  * @throws MissingDispatcherFilterException
  */
@@ -96,7 +95,12 @@ class Dispatcher implements CakeEventListener {
 			return;
 		}
 
-		foreach ($filters as $filter) {
+		foreach ($filters as $index => $filter) {
+			$settings = array();
+			if (is_array($filter) && !is_int($index) && class_exists($index)) {
+				$settings = $filter;
+				$filter = $index;
+			}
 			if (is_string($filter)) {
 				$filter = array('callable' => $filter);
 			}
@@ -106,7 +110,7 @@ class Dispatcher implements CakeEventListener {
 				if (!class_exists($callable)) {
 					throw new MissingDispatcherFilterException($callable);
 				}
-				$manager->attach(new $callable);
+				$manager->attach(new $callable($settings));
 			} else {
 				$on = strtolower($filter['on']);
 				$options = array();
@@ -133,7 +137,9 @@ class Dispatcher implements CakeEventListener {
  * @param CakeRequest $request Request object to dispatch.
  * @param CakeResponse $response Response object to put the results of the dispatch into.
  * @param array $additionalParams Settings array ("bare", "return") which is melded with the GET and POST params
- * @return string|void if `$request['return']` is set then it returns response body, null otherwise
+ * @return string|null if `$request['return']` is set then it returns response body, null otherwise
+ * @triggers Dispatcher.beforeDispatch $this, compact('request', 'response', 'additionalParams')
+ * @triggers Dispatcher.afterDispatch $this, compact('request', 'response')
  * @throws MissingControllerException When the controller is missing.
  */
 	public function dispatch(CakeRequest $request, CakeResponse $response, $additionalParams = array()) {
@@ -146,7 +152,7 @@ class Dispatcher implements CakeEventListener {
 				return $beforeEvent->result->body();
 			}
 			$beforeEvent->result->send();
-			return;
+			return null;
 		}
 
 		$controller = $this->_getController($request, $response);
@@ -158,7 +164,7 @@ class Dispatcher implements CakeEventListener {
 			));
 		}
 
-		$response = $this->_invoke($controller, $request, $response);
+		$response = $this->_invoke($controller, $request);
 		if (isset($request->params['return'])) {
 			return $response->body();
 		}
@@ -170,18 +176,19 @@ class Dispatcher implements CakeEventListener {
 
 /**
  * Initializes the components and models a controller will be using.
- * Triggers the controller action, and invokes the rendering if Controller::$autoRender is true and echo's the output.
- * Otherwise the return value of the controller action are returned.
+ * Triggers the controller action, and invokes the rendering if Controller::$autoRender
+ * is true and echo's the output. Otherwise the return value of the controller
+ * action are returned.
  *
  * @param Controller $controller Controller to invoke
  * @param CakeRequest $request The request object to invoke the controller for.
- * @param CakeResponse $response The response object to receive the output
- * @return CakeResponse te resulting response object
+ * @return CakeResponse the resulting response object
  */
-	protected function _invoke(Controller $controller, CakeRequest $request, CakeResponse $response) {
+	protected function _invoke(Controller $controller, CakeRequest $request) {
 		$controller->constructClasses();
 		$controller->startupProcess();
 
+		$response = $controller->response;
 		$render = true;
 		$result = $controller->invokeAction($request);
 		if ($result instanceof CakeResponse) {
@@ -191,7 +198,7 @@ class Dispatcher implements CakeEventListener {
 
 		if ($render && $controller->autoRender) {
 			$response = $controller->render();
-		} elseif ($response->body() === null) {
+		} elseif (!($result instanceof CakeResponse) && $response->body() === null) {
 			$response->body($result);
 		}
 		$controller->shutdownProcess();
@@ -237,9 +244,9 @@ class Dispatcher implements CakeEventListener {
 	}
 
 /**
- * Load controller and return controller classname
+ * Load controller and return controller class name
  *
- * @param CakeRequest $request
+ * @param CakeRequest $request Request instance.
  * @return string|bool Name of controller class name
  */
 	protected function _loadController($request) {

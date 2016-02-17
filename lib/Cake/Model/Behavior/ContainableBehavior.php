@@ -4,20 +4,20 @@
  *
  * Behavior to simplify manipulating a model's bindings when doing a find operation
  *
- * PHP 5
- *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Model.Behavior
  * @since         CakePHP(tm) v 1.2.0.5669
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 App::uses('ModelBehavior', 'Model');
 
 /**
@@ -75,7 +75,7 @@ class ContainableBehavior extends ModelBehavior {
  *
  * `Model->find('all', array('contain' => array('Model1', 'Model2')));`
  *
- * {{{
+ * ```
  * Model->find('all', array('contain' => array(
  * 	'Model1' => array('Model11', 'Model12'),
  * 	'Model2',
@@ -84,9 +84,9 @@ class ContainableBehavior extends ModelBehavior {
  * 		'Model32',
  * 		'Model33' => array('Model331', 'Model332')
  * )));
- * }}}
+ * ```
  *
- * @param Model $Model	Model using the behavior
+ * @param Model $Model Model using the behavior
  * @param array $query Query parameters as set by cake
  * @return array
  */
@@ -188,7 +188,7 @@ class ContainableBehavior extends ModelBehavior {
 		foreach (array('hasOne', 'belongsTo') as $type) {
 			if (!empty($Model->{$type})) {
 				foreach ($Model->{$type} as $assoc => $data) {
-					if ($Model->useDbConfig == $Model->{$assoc}->useDbConfig && !empty($data['fields'])) {
+					if ($Model->useDbConfig === $Model->{$assoc}->useDbConfig && !empty($data['fields'])) {
 						foreach ((array)$data['fields'] as $field) {
 							$query['fields'][] = (strpos($field, '.') === false ? $assoc . '.' : '') . $field;
 						}
@@ -199,11 +199,11 @@ class ContainableBehavior extends ModelBehavior {
 
 		if (!empty($mandatory[$Model->alias])) {
 			foreach ($mandatory[$Model->alias] as $field) {
-				if ($field == '--primaryKey--') {
+				if ($field === '--primaryKey--') {
 					$field = $Model->primaryKey;
 				} elseif (preg_match('/^.+\.\-\-[^-]+\-\-$/', $field)) {
 					list($modelName, $field) = explode('.', $field);
-					if ($Model->useDbConfig == $Model->{$modelName}->useDbConfig) {
+					if ($Model->useDbConfig === $Model->{$modelName}->useDbConfig) {
 						$field = $modelName . '.' . (
 							($field === '--primaryKey--') ? $Model->$modelName->primaryKey : $field
 						);
@@ -263,11 +263,11 @@ class ContainableBehavior extends ModelBehavior {
  * @param Model $Model Model on which binding restriction is being applied
  * @param array $contain Parameters to use for restricting this model
  * @param array $containments Current set of containments
- * @param boolean $throwErrors Whether non-existent bindings show throw errors
+ * @param bool $throwErrors Whether non-existent bindings show throw errors
  * @return array Containments
  */
 	public function containments(Model $Model, $contain, $containments = array(), $throwErrors = null) {
-		$options = array('className', 'joinTable', 'with', 'foreignKey', 'associationForeignKey', 'conditions', 'fields', 'order', 'limit', 'offset', 'unique', 'finderQuery', 'deleteQuery', 'insertQuery');
+		$options = array('className', 'joinTable', 'with', 'foreignKey', 'associationForeignKey', 'conditions', 'fields', 'order', 'limit', 'offset', 'unique', 'finderQuery');
 		$keep = array();
 		if ($throwErrors === null) {
 			$throwErrors = (empty($this->settings[$Model->alias]) ? true : $this->settings[$Model->alias]['notices']);
@@ -306,7 +306,7 @@ class ContainableBehavior extends ModelBehavior {
 				if (!$optionKey && is_string($key) && preg_match('/^[a-z(]/', $key) && (!isset($Model->{$key}) || !is_object($Model->{$key}))) {
 					$option = 'fields';
 					$val = array($key);
-					if ($key{0} == '(') {
+					if ($key{0} === '(') {
 						$val = preg_split('/\s*,\s*/', substr($key, 1, -1));
 					} elseif (preg_match('/ASC|DESC$/', $key)) {
 						$option = 'order';
@@ -365,7 +365,7 @@ class ContainableBehavior extends ModelBehavior {
  *
  * @param Model $Model Model
  * @param array $map Map of relations for given model
- * @param array|boolean $fields If array, fields to initially load, if false use $Model as primary model
+ * @param array|bool $fields If array, fields to initially load, if false use $Model as primary model
  * @return array Fields
  */
 	public function fieldDependencies(Model $Model, $map, $fields = array()) {
@@ -373,9 +373,9 @@ class ContainableBehavior extends ModelBehavior {
 			foreach ($map as $parent => $children) {
 				foreach ($children as $type => $bindings) {
 					foreach ($bindings as $dependency) {
-						if ($type == 'hasAndBelongsToMany') {
+						if ($type === 'hasAndBelongsToMany') {
 							$fields[$parent][] = '--primaryKey--';
-						} elseif ($type == 'belongsTo') {
+						} elseif ($type === 'belongsTo') {
 							$fields[$parent][] = $dependency . '.--primaryKey--';
 						}
 					}

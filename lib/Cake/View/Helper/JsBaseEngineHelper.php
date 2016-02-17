@@ -1,16 +1,17 @@
 <?php
 /**
  * CakePHP :  Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc.
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.View.Helper
  * @since         CakePHP(tm) v 2.0
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 App::uses('AppHelper', 'View/Helper');
@@ -56,7 +57,7 @@ abstract class JsBaseEngineHelper extends AppHelper {
 	protected $_callbackArguments = array();
 
 /**
- * Create an `alert()` message in Javascript
+ * Create an `alert()` message in JavaScript
  *
  * @param string $message Message you want to alter.
  * @return string completed alert()
@@ -67,7 +68,7 @@ abstract class JsBaseEngineHelper extends AppHelper {
 
 /**
  * Redirects to a URL. Creates a window.location modification snippet
- * that can be used to trigger 'redirects' from Javascript.
+ * that can be used to trigger 'redirects' from JavaScript.
  *
  * @param string|array $url URL
  * @return string completed redirect in javascript
@@ -100,7 +101,7 @@ abstract class JsBaseEngineHelper extends AppHelper {
 	}
 
 /**
- * Create a `prompt()` Javascript function
+ * Create a `prompt()` JavaScript function
  *
  * @param string $message Message you want to prompt.
  * @param string $default Default message
@@ -127,7 +128,7 @@ abstract class JsBaseEngineHelper extends AppHelper {
 		$defaultOptions = array(
 			'prefix' => '', 'postfix' => '',
 		);
-		$options = array_merge($defaultOptions, $options);
+		$options += $defaultOptions;
 
 		return $options['prefix'] . json_encode($data) . $options['postfix'];
 	}
@@ -136,7 +137,8 @@ abstract class JsBaseEngineHelper extends AppHelper {
  * Converts a PHP-native variable of any type to a JSON-equivalent representation
  *
  * @param mixed $val A PHP variable to be converted to JSON
- * @param boolean $quoteString If false, leaves string values unquoted
+ * @param bool $quoteString If false, leaves string values unquoted
+ * @param string $key Key name.
  * @return string a JavaScript-safe/JSON representation of $val
  */
 	public function value($val = array(), $quoteString = null, $key = 'value') {
@@ -146,25 +148,24 @@ abstract class JsBaseEngineHelper extends AppHelper {
 		switch (true) {
 			case (is_array($val) || is_object($val)):
 				$val = $this->object($val);
-			break;
+				break;
 			case ($val === null):
 				$val = 'null';
-			break;
+				break;
 			case (is_bool($val)):
 				$val = ($val === true) ? 'true' : 'false';
-			break;
+				break;
 			case (is_int($val)):
 				$val = $val;
-			break;
+				break;
 			case (is_float($val)):
 				$val = sprintf("%.11f", $val);
-			break;
+				break;
 			default:
 				$val = $this->escape($val);
 				if ($quoteString) {
 					$val = '"' . $val . '"';
 				}
-			break;
 		}
 		return $val;
 	}
@@ -284,7 +285,7 @@ abstract class JsBaseEngineHelper extends AppHelper {
  * Create javascript selector for a CSS rule
  *
  * @param string $selector The selector that is targeted
- * @return JsBaseEngineHelper instance of $this. Allows chained methods.
+ * @return self instance of $this. Allows chained methods.
  */
 	abstract public function get($selector);
 
@@ -297,7 +298,7 @@ abstract class JsBaseEngineHelper extends AppHelper {
  * - `stop` - Whether you want the event to stopped. (defaults to true)
  *
  * @param string $type Type of event to bind to the current dom id
- * @param string $callback The Javascript function you wish to trigger or the function literal
+ * @param string $callback The JavaScript function you wish to trigger or the function literal
  * @param array $options Options for the event.
  * @return string completed event handler
  */
@@ -363,7 +364,7 @@ abstract class JsBaseEngineHelper extends AppHelper {
  * - `type` - Data type for response. 'json' and 'html' are supported. Default is html for most libraries.
  * - `evalScripts` - Whether or not <script> tags should be eval'ed.
  * - `dataExpression` - Should the `data` key be treated as a callback. Useful for supplying `$options['data']` as
- *    another Javascript expression.
+ *    another JavaScript expression.
  *
  * @param string|array $url Array or String URL to target with the request.
  * @param array $options Array of options. See above for cross library supported options
@@ -475,7 +476,7 @@ abstract class JsBaseEngineHelper extends AppHelper {
 	abstract public function serializeForm($options = array());
 
 /**
- * Parse an options assoc array into an Javascript object literal.
+ * Parse an options assoc array into a JavaScript object literal.
  * Similar to object() but treats any non-integer value as a string,
  * does not include `{ }`
  *

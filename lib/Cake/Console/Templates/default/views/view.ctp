@@ -1,23 +1,21 @@
 <?php
 /**
- *
- * PHP 5
- *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Console.Templates.default.views
  * @since         CakePHP(tm) v 1.2.0.5234
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
 <div class="<?php echo $pluralVar; ?> view">
-<h2><?php echo "<?php  echo __('{$singularHumanName}'); ?>"; ?></h2>
+<h2><?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></h2>
 	<dl>
 <?php
 foreach ($fields as $field) {
@@ -45,7 +43,7 @@ foreach ($fields as $field) {
 	<ul>
 <?php
 	echo "\t\t<li><?php echo \$this->Html->link(__('Edit " . $singularHumanName ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
-	echo "\t\t<li><?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), null, __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
+	echo "\t\t<li><?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('confirm' => __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}']))); ?> </li>\n";
 	echo "\t\t<li><?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index')); ?> </li>\n";
 	echo "\t\t<li><?php echo \$this->Html->link(__('New " . $singularHumanName . "'), array('action' => 'add')); ?> </li>\n";
 
@@ -93,7 +91,6 @@ if (empty($associations['hasAndBelongsToMany'])) {
 	$associations['hasAndBelongsToMany'] = array();
 }
 $relations = array_merge($associations['hasMany'], $associations['hasAndBelongsToMany']);
-$i = 0;
 foreach ($relations as $alias => $details):
 	$otherSingularVar = Inflector::variable($alias);
 	$otherPluralHumanName = Inflector::humanize($details['controller']);
@@ -111,9 +108,7 @@ foreach ($relations as $alias => $details):
 		<th class="actions"><?php echo "<?php echo __('Actions'); ?>"; ?></th>
 	</tr>
 <?php
-echo "\t<?php
-		\$i = 0;
-		foreach (\${$singularVar}['{$alias}'] as \${$otherSingularVar}): ?>\n";
+echo "\t<?php foreach (\${$singularVar}['{$alias}'] as \${$otherSingularVar}): ?>\n";
 		echo "\t\t<tr>\n";
 			foreach ($details['fields'] as $field) {
 				echo "\t\t\t<td><?php echo \${$otherSingularVar}['{$field}']; ?></td>\n";
@@ -122,7 +117,7 @@ echo "\t<?php
 			echo "\t\t\t<td class=\"actions\">\n";
 			echo "\t\t\t\t<?php echo \$this->Html->link(__('View'), array('controller' => '{$details['controller']}', 'action' => 'view', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
 			echo "\t\t\t\t<?php echo \$this->Html->link(__('Edit'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
-			echo "\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('controller' => '{$details['controller']}', 'action' => 'delete', \${$otherSingularVar}['{$details['primaryKey']}']), null, __('Are you sure you want to delete # %s?', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
+			echo "\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('controller' => '{$details['controller']}', 'action' => 'delete', \${$otherSingularVar}['{$details['primaryKey']}']), array('confirm' => __('Are you sure you want to delete # %s?', \${$otherSingularVar}['{$details['primaryKey']}']))); ?>\n";
 			echo "\t\t\t</td>\n";
 		echo "\t\t</tr>\n";
 
@@ -136,4 +131,6 @@ echo "\t<?php endforeach; ?>\n";
 		</ul>
 	</div>
 </div>
-<?php endforeach; ?>
+<?php
+endforeach;
+?>

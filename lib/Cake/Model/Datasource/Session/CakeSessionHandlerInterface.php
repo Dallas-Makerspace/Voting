@@ -1,16 +1,17 @@
 <?php
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Model.Datasource
  * @since         CakePHP(tm) v 2.1
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 /**
@@ -24,14 +25,14 @@ interface CakeSessionHandlerInterface {
 /**
  * Method called on open of a session.
  *
- * @return boolean Success
+ * @return bool Success
  */
 	public function open();
 
 /**
  * Method called on close of a session.
  *
- * @return boolean Success
+ * @return bool Success
  */
 	public function close();
 
@@ -46,17 +47,17 @@ interface CakeSessionHandlerInterface {
 /**
  * Helper function called on write for sessions.
  *
- * @param integer $id ID that uniquely identifies session in database
+ * @param int $id ID that uniquely identifies session in database
  * @param mixed $data The value of the data to be saved.
- * @return boolean True for successful write, false otherwise.
+ * @return bool True for successful write, false otherwise.
  */
 	public function write($id, $data);
 
 /**
  * Method called on the destruction of a session.
  *
- * @param integer $id ID that uniquely identifies session in database
- * @return boolean True for successful delete, false otherwise.
+ * @param int $id ID that uniquely identifies session in database
+ * @return bool True for successful delete, false otherwise.
  */
 	public function destroy($id);
 
@@ -64,8 +65,8 @@ interface CakeSessionHandlerInterface {
  * Run the Garbage collection on the session storage. This method should vacuum all
  * expired or dead sessions.
  *
- * @param integer $expires Timestamp (defaults to current time)
- * @return boolean Success
+ * @param int $expires Timestamp (defaults to current time)
+ * @return bool Success
  */
 	public function gc($expires = null);
 

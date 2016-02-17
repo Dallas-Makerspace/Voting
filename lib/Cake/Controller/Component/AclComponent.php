@@ -1,17 +1,19 @@
 <?php
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Controller.Component
  * @since         CakePHP(tm) v 0.10.0.1076
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 App::uses('Component', 'Controller');
 App::uses('AclInterface', 'Controller/Component/Acl');
 
@@ -19,8 +21,8 @@ App::uses('AclInterface', 'Controller/Component/Acl');
  * Access Control List factory class.
  *
  * Uses a strategy pattern to allow custom ACL implementations to be used with the same component interface.
- * You can define by changing `Configure::write('Acl.classname', 'DbAcl');` in your core.php. Concrete ACL
- * implementations should extend `AclBase` and implement the methods it defines.
+ * You can define by changing `Configure::write('Acl.classname', 'DbAcl');` in your core.php. The adapter
+ * you specify must implement `AclInterface`
  *
  * @package       Cake.Controller.Component
  * @link http://book.cakephp.org/2.0/en/core-libraries/components/access-control-lists.html
@@ -51,8 +53,8 @@ class AclComponent extends Component {
 /**
  * Constructor. Will return an instance of the correct ACL class as defined in `Configure::read('Acl.classname')`
  *
- * @param ComponentCollection $collection
- * @param array $settings
+ * @param ComponentCollection $collection Collection instance.
+ * @param array $settings Settings list.
  * @throws CakeException when Acl.classname could not be loaded.
  */
 	public function __construct(ComponentCollection $collection, $settings = array()) {
@@ -77,7 +79,7 @@ class AclComponent extends Component {
  * Will call the initialize method on the adapter if setting a new one.
  *
  * @param AclInterface|string $adapter Instance of AclInterface or a string name of the class to use. (optional)
- * @return AclInterface|void either null, or the adapter implementation.
+ * @return AclInterface|null Either null, or the adapter implementation.
  * @throws CakeException when the given class is not an instance of AclInterface
  */
 	public function adapter($adapter = null) {
@@ -90,7 +92,7 @@ class AclComponent extends Component {
 			}
 			$this->_Instance = $adapter;
 			$this->_Instance->initialize($this);
-			return;
+			return null;
 		}
 		return $this->_Instance;
 	}
@@ -102,7 +104,7 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
- * @return boolean Success
+ * @return bool Success
  */
 	public function check($aro, $aco, $action = "*") {
 		return $this->_Instance->check($aro, $aco, $action);
@@ -115,7 +117,7 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
- * @return boolean Success
+ * @return bool Success
  */
 	public function allow($aro, $aco, $action = "*") {
 		return $this->_Instance->allow($aro, $aco, $action);
@@ -128,7 +130,7 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
- * @return boolean Success
+ * @return bool Success
  */
 	public function deny($aro, $aco, $action = "*") {
 		return $this->_Instance->deny($aro, $aco, $action);
@@ -141,7 +143,7 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
- * @return boolean Success
+ * @return bool Success
  */
 	public function inherit($aro, $aco, $action = "*") {
 		return $this->_Instance->inherit($aro, $aco, $action);
@@ -153,11 +155,11 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
- * @return boolean Success
- * @deprecated
+ * @return bool Success
+ * @deprecated 3.0.0 Will be removed in 3.0.
  */
 	public function grant($aro, $aco, $action = "*") {
-		trigger_error(__d('cake_dev', 'AclComponent::grant() is deprecated, use allow() instead'), E_USER_WARNING);
+		trigger_error(__d('cake_dev', '%s is deprecated, use %s instead', 'AclComponent::grant()', 'allow()'), E_USER_WARNING);
 		return $this->_Instance->allow($aro, $aco, $action);
 	}
 
@@ -167,11 +169,11 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
- * @return boolean Success
- * @deprecated
+ * @return bool Success
+ * @deprecated 3.0.0 Will be removed in 3.0.
  */
 	public function revoke($aro, $aco, $action = "*") {
-		trigger_error(__d('cake_dev', 'AclComponent::revoke() is deprecated, use deny() instead'), E_USER_WARNING);
+		trigger_error(__d('cake_dev', '%s is deprecated, use %s instead', 'AclComponent::revoke()', 'deny()'), E_USER_WARNING);
 		return $this->_Instance->deny($aro, $aco, $action);
 	}
 

@@ -1,17 +1,19 @@
 <?php
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Controller.Component.Acl
  * @since         CakePHP(tm) v 0.10.0.1076
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 App::uses('AclInterface', 'Controller/Component/Acl');
 
 /**
@@ -41,7 +43,7 @@ class IniAcl extends Object implements AclInterface {
 /**
  * Initialize method
  *
- * @param AclBase $component
+ * @param Component $component The AclComponent instance.
  * @return void
  */
 	public function initialize(Component $component) {
@@ -53,7 +55,7 @@ class IniAcl extends Object implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
- * @return boolean Success
+ * @return bool Success
  */
 	public function allow($aro, $aco, $action = "*") {
 	}
@@ -64,7 +66,7 @@ class IniAcl extends Object implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
- * @return boolean Success
+ * @return bool Success
  */
 	public function deny($aro, $aco, $action = "*") {
 	}
@@ -75,7 +77,7 @@ class IniAcl extends Object implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
- * @return boolean Success
+ * @return bool Success
  */
 	public function inherit($aro, $aco, $action = "*") {
 	}
@@ -88,7 +90,7 @@ class IniAcl extends Object implements AclInterface {
  * @param string $aro ARO
  * @param string $aco ACO
  * @param string $action Action
- * @return boolean Success
+ * @return bool Success
  */
 	public function check($aro, $aco, $action = null) {
 		if (!$this->config) {

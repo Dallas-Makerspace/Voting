@@ -2,19 +2,18 @@
 /**
  * ControllerTask Test Case
  *
- * PHP 5
- *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Test.Case.Console.Command.Task
  * @since         CakePHP(tm) v 1.3
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
 App::uses('ConsoleOutput', 'Console');
@@ -39,9 +38,10 @@ $imported = class_exists('BakeArticle') || class_exists('BakeComment') || class_
 if (!$imported) {
 	define('ARTICLE_MODEL_CREATED', true);
 
+/**
+ * Class BakeArticle
+ */
 	class BakeArticle extends Model {
-
-		public $name = 'BakeArticle';
 
 		public $hasMany = array('BakeComment');
 
@@ -222,7 +222,7 @@ class ControllerTaskTest extends CakeTestCase {
 	public function testDoComponentsNo() {
 		$this->Task->expects($this->any())->method('in')->will($this->returnValue('n'));
 		$result = $this->Task->doComponents();
-		$this->assertSame(array(), $result);
+		$this->assertSame(array('Paginator', 'Flash'), $result);
 	}
 
 /**
@@ -235,7 +235,7 @@ class ControllerTaskTest extends CakeTestCase {
 		$this->Task->expects($this->at(1))->method('in')->will($this->returnValue(' RequestHandler, Security  '));
 
 		$result = $this->Task->doComponents();
-		$expected = array('RequestHandler', 'Security');
+		$expected = array('Paginator', 'Flash', 'RequestHandler', 'Security');
 		$this->assertEquals($expected, $result);
 	}
 
@@ -249,7 +249,7 @@ class ControllerTaskTest extends CakeTestCase {
 		$this->Task->expects($this->at(1))->method('in')->will($this->returnValue(' RequestHandler, Security, , '));
 
 		$result = $this->Task->doComponents();
-		$expected = array('RequestHandler', 'Security');
+		$expected = array('Paginator', 'Flash', 'RequestHandler', 'Security');
 		$this->assertEquals($expected, $result);
 	}
 
@@ -280,28 +280,17 @@ class ControllerTaskTest extends CakeTestCase {
 		$components = array('Acl', 'Auth');
 		$this->Task->expects($this->any())->method('createFile')->will($this->returnValue(true));
 
-		$result = $this->Task->bake('Articles', '--actions--', $helpers, $components);
-		$this->assertContains(' * @property Article $Article', $result);
-		$this->assertContains(' * @property AclComponent $Acl', $result);
-		$this->assertContains(' * @property AuthComponent $Auth', $result);
-		$this->assertContains('class ArticlesController extends AppController', $result);
-		$this->assertContains("public \$components = array('Acl', 'Auth')", $result);
-		$this->assertContains("public \$helpers = array('Js', 'Time')", $result);
-		$this->assertContains("--actions--", $result);
+		$result = $this->Task->bake('Articles', null, $helpers, $components);
+		$expected = file_get_contents(CAKE . 'Test' . DS . 'bake_compare' . DS . 'Controller' . DS . 'NoActions.ctp');
+		$this->assertTextEquals($expected, $result);
+
+		$result = $this->Task->bake('Articles', null, array(), array());
+		$expected = file_get_contents(CAKE . 'Test' . DS . 'bake_compare' . DS . 'Controller' . DS . 'NoHelpersOrComponents.ctp');
+		$this->assertTextEquals($expected, $result);
 
 		$result = $this->Task->bake('Articles', 'scaffold', $helpers, $components);
-		$this->assertContains("class ArticlesController extends AppController", $result);
-		$this->assertContains("public \$scaffold", $result);
-		$this->assertNotContains('@property', $result);
-		$this->assertNotContains('helpers', $result);
-		$this->assertNotContains('components', $result);
-
-		$result = $this->Task->bake('Articles', '--actions--', array(), array());
-		$this->assertContains('class ArticlesController extends AppController', $result);
-		$this->assertSame(substr_count($result, '@property'), 1);
-		$this->assertNotContains('components', $result);
-		$this->assertNotContains('helpers', $result);
-		$this->assertContains('--actions--', $result);
+		$expected = file_get_contents(CAKE . 'Test' . DS . 'bake_compare' . DS . 'Controller' . DS . 'Scaffold.ctp');
+		$this->assertTextEquals($expected, $result);
 	}
 
 /**
@@ -345,30 +334,10 @@ class ControllerTaskTest extends CakeTestCase {
  */
 	public function testBakeActionsUsingSessions() {
 		$result = $this->Task->bakeActions('BakeArticles', null, true);
-
-		$this->assertContains('function index() {', $result);
-		$this->assertContains('$this->BakeArticle->recursive = 0;', $result);
-		$this->assertContains("\$this->set('bakeArticles', \$this->paginate());", $result);
-
-		$this->assertContains('function view($id = null)', $result);
-		$this->assertContains("throw new NotFoundException(__('Invalid bake article'));", $result);
-		$this->assertContains("\$options = array('conditions' => array('BakeArticle.' . \$this->BakeArticle->primaryKey => \$id));", $result);
-		$this->assertContains("\$this->set('bakeArticle', \$this->BakeArticle->find('first', \$options));", $result);
-
-		$this->assertContains('function add()', $result);
-		$this->assertContains("if (\$this->request->is('post'))", $result);
-		$this->assertContains('if ($this->BakeArticle->save($this->request->data))', $result);
-		$this->assertContains("\$this->Session->setFlash(__('The bake article has been saved'));", $result);
-
-		$this->assertContains('function edit($id = null)', $result);
-		$this->assertContains("\$this->Session->setFlash(__('The bake article could not be saved. Please, try again.'));", $result);
-
-		$this->assertContains('function delete($id = null)', $result);
-		$this->assertContains('if ($this->BakeArticle->delete())', $result);
-		$this->assertContains("\$this->Session->setFlash(__('Bake article deleted'));", $result);
+		$expected = file_get_contents(CAKE . 'Test' . DS . 'bake_compare' . DS . 'Controller' . DS . 'ActionsUsingSessions.ctp');
+		$this->assertTextEquals($expected, $result);
 
 		$result = $this->Task->bakeActions('BakeArticles', 'admin_', true);
-
 		$this->assertContains('function admin_index() {', $result);
 		$this->assertContains('function admin_add()', $result);
 		$this->assertContains('function admin_view($id = null)', $result);
@@ -383,29 +352,8 @@ class ControllerTaskTest extends CakeTestCase {
  */
 	public function testBakeActionsWithNoSessions() {
 		$result = $this->Task->bakeActions('BakeArticles', null, false);
-
-		$this->assertContains('function index() {', $result);
-		$this->assertContains('$this->BakeArticle->recursive = 0;', $result);
-		$this->assertContains("\$this->set('bakeArticles', \$this->paginate());", $result);
-
-		$this->assertContains('function view($id = null)', $result);
-		$this->assertContains("throw new NotFoundException(__('Invalid bake article'));", $result);
-		$this->assertContains("\$this->set('bakeArticle', \$this->BakeArticle->find('first', \$options));", $result);
-
-		$this->assertContains('function add()', $result);
-		$this->assertContains("if (\$this->request->is('post'))", $result);
-		$this->assertContains('if ($this->BakeArticle->save($this->request->data))', $result);
-
-		$this->assertContains("\$this->flash(__('The bake article has been saved.'), array('action' => 'index'))", $result);
-
-		$this->assertContains('function edit($id = null)', $result);
-		$this->assertContains("\$this->BakeArticle->BakeTag->find('list')", $result);
-		$this->assertContains("\$this->set(compact('bakeTags'))", $result);
-
-		$this->assertContains('function delete($id = null)', $result);
-		$this->assertContains("\$this->request->onlyAllow('post', 'delete')", $result);
-		$this->assertContains('if ($this->BakeArticle->delete())', $result);
-		$this->assertContains("\$this->flash(__('Bake article deleted'), array('action' => 'index'))", $result);
+		$expected = file_get_contents(CAKE . 'Test' . DS . 'bake_compare' . DS . 'Controller' . DS . 'ActionsWithNoSessions.ctp');
+		$this->assertTextEquals($expected, $result);
 	}
 
 /**
